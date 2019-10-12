@@ -21,7 +21,11 @@ public class SampleController {
     /*Controller for handling form submit*/
     @PostMapping("/submit_form")
     public String submitForm(
-            @RequestParam(/*Value equals to input name on form*/value = "number") Integer inputNumber,
+            @RequestParam(
+                    /*Value equals to input name on form*/
+                    /*Also you can map params from form without @RequestParam */
+                    /*In this case you just have to set method parameter name to input name from form*/
+                    value = "number") Integer inputNumber,
             /*Object to save request params after redirect*/RedirectAttributes redirectAttributes) {
 
         System.out.println(inputNumber);
